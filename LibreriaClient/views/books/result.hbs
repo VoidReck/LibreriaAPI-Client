@@ -1,0 +1,33 @@
+<div class="content d-flex justify-content-center">
+    <div class="col-12 col-md-10">
+        <div class="row">
+            {{#if booksList}}
+            <div class="mt-4 mb-4">
+                <h2>Resultados de busqueda:</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                    {{#each booksList}}
+                    <div class="col">
+                        <div class="card text-bg-secondary mb-3">
+                            <div class="card-header">
+                                <h5>{{this.title}}</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Autor: {{this.author}}</h6>
+                                <p class="card-text">Año de Publicación: {{this.publishedYear}}</p>
+                                <p class="card-text capitalize">Estado: {{this.status}}</p>
+                            </div>
+                        </div>
+                        {{#if ../user}}
+                        <a href="/books/edit/{{this._id}}" class="btn btn-warning">Editar</a>
+                        <a href="/books/delete/{{this._id}}" class="btn btn-danger">Eliminar</a>
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{else}}
+            <p>No se encontraron libros.</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

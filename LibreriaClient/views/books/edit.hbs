@@ -1,0 +1,32 @@
+<div class="content d-flex justify-content-center align-items-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="row">
+            <h1>Editar Libro</h1>
+            <form action="/books/edit/result/{{libro._id}}" method="post">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{libro.title}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="author" class="form-label">Autor</label>
+                    <input type="text" class="form-control" id="author" name="author" value="{{libro.author}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="publishedYear" class="form-label">Año de Publicación</label>
+                    <input type="number" class="form-control" id="publishedYear" name="publishedYear"
+                        value="{{libro.publishedYear}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label">Estado</label>
+                    <select class="form-control" id="status" name="status" required>
+                        {{#select libro.status }}
+                        <option value="disponible">Disponible</option>
+                        <option value="reservado">Reservado</option>
+                        {{/select}}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+</div>
