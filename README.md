@@ -1,5 +1,5 @@
 
-# Biblioteca API/Cliente
+# Libreria API/Cliente
 
 API para gestionar una biblioteca, incluyendo funcionalidades de agregar, editar y eliminar libros, y un cliente web que permite administrar fácilmente la biblioteca.
 
